@@ -1,6 +1,4 @@
 import React from 'react'
-import { Button, Space } from 'antd'
-import { GithubOutlined } from '@ant-design/icons'
 
 import './index.less'
 
