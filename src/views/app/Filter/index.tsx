@@ -1,11 +1,12 @@
 import React, { CSSProperties } from 'react'
+import { Form } from 'antd'
 import { observer } from 'mobx-react'
 import FormInfoObserver from './mbox'
-import { Form } from 'antd'
+
 import InputName from './InputName'
 import SelectItem from './Select'
 import ActionsItem from './Actions'
-import SelectGroupItem from './SelectGroup'
+// import SelectGroupItem from './SelectGroup'
 
 import './index.less'
 
@@ -36,12 +37,13 @@ export const Filter = observer(() => {
       <div className="hotAndNew">
         {['最新', '热门'].map((item, idx) => {
           return (
-            <a
+            <span
+              key={idx}
               style={{ color: sortIndex === idx ? '#15aabf' : '' }}
               onClick={() => handleIndex(idx)}
             >
               {item}
-            </a>
+            </span>
           )
         })}
       </div>
