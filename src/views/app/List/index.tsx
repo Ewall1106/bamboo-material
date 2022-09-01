@@ -1,9 +1,8 @@
 import React from 'react'
-
 import { observer } from 'mobx-react'
 import ListInfoObserver from './mbox'
 import Icon, { DownloadOutlined } from '@ant-design/icons'
-import { Badge, Skeleton, Popover } from 'antd'
+import { Badge, Skeleton, Popover, Empty } from 'antd'
 
 import './index.less'
 
@@ -77,7 +76,7 @@ const List = observer(() => {
 
   return (
     <div className="list">
-      <div className="main">
+      <div className="content">
         {list.map(item => {
           return (
             <div className="list__card" key={item._id}>
@@ -93,6 +92,10 @@ const List = observer(() => {
             </div>
           )
         })}
+
+        {!list.length && (
+          <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} style={{ margin: '20px auto' }} />
+        )}
       </div>
     </div>
   )
