@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
 import ListInfoObserver from './mbox'
 import Icon, { DownloadOutlined } from '@ant-design/icons'
@@ -50,6 +50,12 @@ const BambooIcon = ({ type }) => {
 const List = observer(() => {
   const list = ListInfoObserver.getList()
   const loading = ListInfoObserver.getLoading()
+  const isSkeleton = ListInfoObserver.getSkeleton()
+  const isTransForm = ListInfoObserver.getTransForm()
+
+  useEffect(() => {
+    ListInfoObserver.setSkeleton(true)
+  }, [])
 
   const SkeletonImage = ({ active }) => {
     return <Skeleton.Image style={{ width: 200, height: 200 }} active={active} />
@@ -75,7 +81,7 @@ const List = observer(() => {
   }
 
   return (
-    <div className="list">
+    <div className="list" style={{ width: isTransForm ? '100%' : '70%' }}>
       <div className="content">
         {list.map(item => {
           return (
@@ -93,7 +99,9 @@ const List = observer(() => {
           )
         })}
 
-        {!list.length && (
+        {isSkeleton && <Skeleton active />}
+
+        {!list.length && !isSkeleton && (
           <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} style={{ margin: '20px auto' }} />
         )}
       </div>
