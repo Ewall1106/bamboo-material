@@ -30,7 +30,6 @@
           height: 200px;
           margin: 0 auto;
           object-fit: contain;
-          margin-bottom: 10px;
         }
       }
       .list__card__divider {
@@ -40,10 +39,24 @@
         background: #eee;
       }
       .list__card__desc {
+        display: flex;
+        align-items: center;
         padding: 0 10px;
         .title {
           font-size: 14px;
           color: #8795a1;
+          margin-left: 6px;
+          width: 100px;
+          flex: 1;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          margin-right: 6px;
+          overflow: hidden;
+        }
+        .count {
+          width: 40px;
+          color: #8795a1;
+          font-size: 12px;
         }
       }
     }
