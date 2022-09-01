@@ -7,6 +7,8 @@ class ListInfo {
   pageNo = 1
   pageSize = 9
   loading = false
+  skeleton = false
+  transform = false
 
   constructor() {
     makeAutoObservable(this)
@@ -14,6 +16,12 @@ class ListInfo {
 
   requestList = async ({ pageNo = 1, pageSize = 9, ...others }) => {
     this.loading = true
+    if (pageNo == 2 && !this.transform) {
+      this.skeleton = true
+      this.tableList = []
+    }
+    if (pageNo >= 2) this.transform = true
+
     const { data } = await materialApi.getPageMaterial({ pageNo, pageSize, ...others })
     console.log('===list===', data)
     this.tableList = data.list.map(item => {
@@ -24,6 +32,7 @@ class ListInfo {
     this.pageNo = pageNo
     this.total = data.total
     this.loading = false
+    this.skeleton = false
   }
 
   getList = () => {
@@ -40,6 +49,18 @@ class ListInfo {
 
   getPageNo = () => {
     return this.pageNo
+  }
+
+  getTransForm = () => {
+    return this.transform
+  }
+
+  getSkeleton = () => {
+    return this.skeleton
+  }
+
+  setSkeleton = flag => {
+    this.skeleton = flag
   }
 }
 
