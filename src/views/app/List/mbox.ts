@@ -5,14 +5,14 @@ class ListInfo {
   tableList = []
   total = 0
   pageNo = 1
-  pageSize = 10
+  pageSize = 9
   loading = false
 
   constructor() {
     makeAutoObservable(this)
   }
 
-  requestList = async ({ pageNo = 1, pageSize = 10, ...others }) => {
+  requestList = async ({ pageNo = 1, pageSize = 9, ...others }) => {
     this.loading = true
     const { data } = await materialApi.getPageMaterial({ pageNo, pageSize, ...others })
     console.log('===list===', data)
