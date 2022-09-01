@@ -15,10 +15,12 @@ class ListInfo {
   requestList = async ({ pageNo = 1, pageSize = 10, ...others }) => {
     this.loading = true
     const { data } = await materialApi.getPageMaterial({ pageNo, pageSize, ...others })
+    console.log('===list===', data)
     this.tableList = data.list.map(item => {
       item.key = item._id
       return item
     })
+
     this.pageNo = pageNo
     this.total = data.total
     this.loading = false
