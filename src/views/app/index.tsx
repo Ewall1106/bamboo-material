@@ -4,8 +4,12 @@ import Header from './Header'
 import Filter from './Filter'
 import Main from './Main'
 
+import FilterObserver from './Filter/mbox'
+
 function App() {
-  useEffect(() => {}, [])
+  useEffect(() => {
+    FilterObserver.handleReset()
+  }, [])
 
   return (
     <div id="App">
