@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import Header from './Header'
 import Filter from './Filter'
 import Main from './Main'
+import Pagination from './Pagination'
 
 import FilterObserver from './Filter/mbox'
 
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <Filter />
       <Main />
+      <Pagination />
     </div>
   )
 }
