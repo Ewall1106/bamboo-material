@@ -17,7 +17,7 @@ class ListInfo {
     makeAutoObservable(this)
   }
 
-  requestList = async ({ pageNo, ...others }) => {
+  requestList = async ({ pageNo = this.pageNo, ...others }) => {
     this.setLoading(true)
     if (pageNo === 2 && !this.transform) {
       this.skeleton = true
