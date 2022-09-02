@@ -85,7 +85,11 @@ const List = observer(() => {
       <div className="content">
         {list.map(item => {
           return (
-            <div className="list__card" key={item._id}>
+            <div
+              className="list__card"
+              key={item.key}
+              style={item.placeholder && { visibility: 'hidden' }}
+            >
               <div className="list__card__thumb">
                 <Thumb url={item.thumb} />
               </div>
