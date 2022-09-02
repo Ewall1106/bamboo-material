@@ -54,7 +54,7 @@ const Drawer = observer(() => {
       footer={<GiveStar />}
     >
       <div className="drawer__content">
-        <img className="drawer__thumb" src={info.thumb} />
+        <img alt="thumb" className="drawer__thumb" src={info.thumb} />
         <Divider />
         <div className="drawer__title">{info.name}</div>
         <div className="drawer__desc">{info.desc}</div>
@@ -71,7 +71,7 @@ const Drawer = observer(() => {
         <DownloadCount />
 
         <div className="drawer__command">
-          <Input style={{ width: 300 }} defaultValue="$ bamboo create 123123jkjjhkjhk1231" />
+          <Input style={{ flex: 1 }} defaultValue="$ bamboo create 123123jkjjhkjhk1231" />
           <Tooltip title={t('use this component')}>
             <Button icon={<CopyOutlined />} />
           </Tooltip>
