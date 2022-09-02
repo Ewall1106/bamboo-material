@@ -34,3 +34,7 @@ export const getTagColor = s => {
 export const getTime = time => {
   return dayjs(time).format('YYYY-MM-DD')
 }
+
+export const getLng = () => {
+  return localStorage.getItem('lng')
+}

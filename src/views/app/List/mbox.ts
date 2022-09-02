@@ -16,7 +16,7 @@ class ListInfo {
 
   requestList = async ({ pageNo = 1, pageSize = 9, ...others }) => {
     this.loading = true
-    if (pageNo == 2 && !this.transform) {
+    if (pageNo === 2 && !this.transform) {
       this.skeleton = true
       this.tableList = []
     }
