@@ -13,7 +13,7 @@ export const GiveStar = ({ path }) => {
       autoplay: true,
       path
     })
-  }, [])
+  }, [path, docId])
 
   return <div id={docId} style={{ width: 50, height: 50 }}></div>
 }

@@ -23,7 +23,7 @@ const resources = {
       'components built with Bamboo': 'components built with Bamboo',
       description:
         'Build your web page more faster with premade responsive components designed and built by Bamboo.',
-      'give-me-star': 'Give this project a star to help it doing better~',
+      'give-me-star': 'Give this project a star to help it getting better~',
       'use this component': 'use this component',
       'have-fun': "Hoping y'll having fun with it."
     }
