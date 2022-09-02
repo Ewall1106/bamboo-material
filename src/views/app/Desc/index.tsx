@@ -15,7 +15,7 @@ function Desc() {
       </h1>
       <div className="desc__text">{t('description')}</div>
       <div className="desc__text" style={{ display: 'flex', alignItems: 'flex-end' }}>
-        <span>Hoping y'll having fun with it.</span>
+        <span>{t('have-fun')}</span>
         <LottieFile path="https://assets7.lottiefiles.com/packages/lf20_K0tMD4BNJS.json" />
       </div>
     </div>

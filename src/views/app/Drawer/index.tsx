@@ -1,11 +1,10 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import { useTranslation } from 'react-i18next'
-import { getLng } from '@/utils'
 import ListInfoObserver from '../List/mbox'
 
-import { Drawer as AntDrawer, Divider, Input, Button, Tooltip, Popover, Badge } from 'antd'
-import Icon, { CopyOutlined, DownloadOutlined } from '@ant-design/icons'
+import { Drawer as AntDrawer, Divider, Input, Button, Tooltip } from 'antd'
+import { CopyOutlined, DownloadOutlined } from '@ant-design/icons'
 
 import LottieFile from '@/components/LottieFile'
 import FrameIcon from '@/components/FrameIcon'
@@ -13,6 +12,8 @@ import FrameIcon from '@/components/FrameIcon'
 import './index.less'
 
 const GiveStar = () => {
+  const { t } = useTranslation()
+
   const handleStart = () => {
     window.open('https://github.com/Ewall1106/bamboo-ui')
   }
@@ -20,13 +21,13 @@ const GiveStar = () => {
   return (
     <div className="giveMeStare" onClick={handleStart}>
       <LottieFile path="https://assets4.lottiefiles.com/packages/lf20_083h7wcs.json" />
-      给此项目点个star帮助其做的更好~
+      {t('give-me-star')}
     </div>
   )
 }
 
 const Drawer = observer(() => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   const visible = ListInfoObserver.getDrawerShow()
   const setDrawerShow = ListInfoObserver.setDrawerShow
@@ -35,7 +36,7 @@ const Drawer = observer(() => {
   const DownloadCount = () => {
     return (
       <div className="drawer__download">
-        <span>使用次数: </span>
+        <span>{t('download')}: </span>
         <DownloadOutlined />
         <span style={{ paddingLeft: 2 }}>99+</span>
       </div>
@@ -58,16 +59,20 @@ const Drawer = observer(() => {
         <div className="drawer__title">{info.name}</div>
         <div className="drawer__desc">{info.desc}</div>
         <div className="drawer__framework">
-          组件类型: <FrameIcon type={info.type} />
+          {t('framework')}: <FrameIcon type={info.type} />
         </div>
-        <div className="drawer__create">创建时间: {info.createdAt}</div>
-        <div className="drawer__update">更新时间: {info.updatedAt}</div>
+        <div className="drawer__create">
+          {t('create')}: {info.createdAt}
+        </div>
+        <div className="drawer__update">
+          {t('update')}: {info.updatedAt}
+        </div>
 
         <DownloadCount />
 
         <div className="drawer__command">
           <Input style={{ width: 300 }} defaultValue="$ bamboo create 123123jkjjhkjhk1231" />
-          <Tooltip title="using this component">
+          <Tooltip title={t('use this component')}>
             <Button icon={<CopyOutlined />} />
           </Tooltip>
         </div>
