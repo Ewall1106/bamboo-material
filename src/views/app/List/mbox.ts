@@ -10,6 +10,8 @@ class ListInfo {
   loading = false
   skeleton = false
   transform = false
+  currentItem = {}
+  drawerShow = false
 
   constructor() {
     makeAutoObservable(this)
@@ -103,6 +105,23 @@ class ListInfo {
 
   setSkeleton = flag => {
     this.skeleton = flag
+  }
+
+  setDrawerShow = flag => {
+    this.drawerShow = flag
+  }
+
+  getDrawerShow = () => {
+    return this.drawerShow
+  }
+
+  setCurrentItem = item => {
+    this.setDrawerShow(true)
+    this.currentItem = item
+  }
+
+  getCurrentItem = () => {
+    return this.currentItem
   }
 }
 
