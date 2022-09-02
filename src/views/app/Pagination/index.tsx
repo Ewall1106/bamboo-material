@@ -7,6 +7,9 @@ import './index.less'
 
 const Pagination = observer(() => {
   const isTransForm = ListInfoObserver.getTransForm()
+  const total = ListInfoObserver.getTotal()
+  const current = ListInfoObserver.getPageNo()
+  const pageSize = ListInfoObserver.getPageSize()
 
   const onChange = pagination => {
     ListInfoObserver.requestList({ pageNo: pagination })
@@ -15,7 +18,13 @@ const Pagination = observer(() => {
   return (
     <div className="pagination">
       <div className="pagination__main" style={{ width: isTransForm ? '100%' : '70%' }}>
-        <AntPagination onChange={onChange} defaultCurrent={1} total={100} showSizeChanger={false} />
+        <AntPagination
+          onChange={onChange}
+          current={current}
+          pageSize={pageSize}
+          total={total}
+          showSizeChanger={false}
+        />
       </div>
     </div>
   )

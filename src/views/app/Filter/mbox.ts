@@ -31,7 +31,7 @@ class FormInfo {
   // === action === //
   handleReset = () => {
     this.formInstance.resetFields()
-    ListObserver.requestList({})
+    ListObserver.requestList({ pageNo: 1 })
   }
 
   handleFinsh = values => {
