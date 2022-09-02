@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react'
 import { Form } from 'antd'
 import { observer } from 'mobx-react'
 import FormInfoObserver from './mbox'
+import { useTranslation } from 'react-i18next'
 
 import InputName from './InputName'
 import SelectItem from './Select'
@@ -25,6 +26,8 @@ const style: CSSProperties = {
 
 export const Filter = observer(() => {
   const [form] = Form.useForm()
+  const { t } = useTranslation()
+
   FormInfoObserver.setFormInstance(form)
   const { sortIndex } = FormInfoObserver.getFormInfo()
 
@@ -35,7 +38,7 @@ export const Filter = observer(() => {
   return (
     <Form style={style} layout="inline" form={form} onFinish={FormInfoObserver.handleFinsh}>
       <div className="hotAndNew">
-        {['最新', '热门'].map((item, idx) => {
+        {[t('recent'), t('hot')].map((item, idx) => {
           return (
             <span
               key={idx}
