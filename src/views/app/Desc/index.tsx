@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import LottieFile from '@/components/LottieFile'
 
 import './index.less'
 
@@ -12,7 +13,11 @@ function Desc() {
         <span style={{ color: '#15aabf', fontWeight: 'bold', marginRight: 4 }}>123</span>
         {t('components built with Bamboo')}
       </h1>
-      <p className="desc__text">{t('description')}</p>
+      <div className="desc__text">{t('description')}</div>
+      <div className="desc__text" style={{ display: 'flex', alignItems: 'flex-end' }}>
+        <span>Hoping y'll having fun with it.</span>
+        <LottieFile path="https://assets7.lottiefiles.com/packages/lf20_K0tMD4BNJS.json" />
+      </div>
     </div>
   )
 }
