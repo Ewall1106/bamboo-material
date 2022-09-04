@@ -6,8 +6,8 @@ const nextConfig = {
   i18n,
   reactStrictMode: false,
   swcMinify: true,
-  sassOptions: {
-    // includePaths: [path.join(__dirname, 'styles')],
+  images: {
+    domains: ['s3.bmp.ovh', 'imgse.com']
   }
 }
 
