@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import materialApi from '@/lib/api/material'
+import { getPageMaterial } from '@/lib/api/material'
 import { nanoid } from 'nanoid'
 
 class ListInfo {
@@ -26,7 +26,7 @@ class ListInfo {
     if (pageNo >= 2) this.transform = true
 
     try {
-      const { data } = await materialApi.getPageMaterial({
+      const { data } = await getPageMaterial({
         pageNo,
         pageSize: this.pageSize,
         ...others

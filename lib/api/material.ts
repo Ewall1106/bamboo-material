@@ -7,7 +7,3 @@ export function getPageMaterial(data: any) {
     data
   })
 }
-
-export default {
-  getPageMaterial
-}
