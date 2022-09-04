@@ -3,77 +3,26 @@
   "version": "1.0.0",
   "author": "DanielXiong<ewall1106@gmail.com>",
   "scripts": {
-    "dev": "cross-env PROJECT_ENV=local craco start",
-    "mock": "cross-env PROJECT_ENV=mock craco start",
-    "start": "cross-env PROJECT_ENV=development craco start",
-    "build": "cross-env PROJECT_ENV=production craco build",
-    "compress": "node ./compress.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "ahooks": "^3.0.8",
-    "antd": "^4.21.5",
-    "axios": "^0.24.0",
-    "cross-env": "^7.0.3",
-    "dayjs": "^1.11.3",
-    "i18next": "^21.9.1",
-    "lodash": "^4.17.21",
-    "lottie-web": "^5.9.6",
-    "mobx": "^6.3.8",
-    "mobx-react": "^7.5.2",
-    "nanoid": "^4.0.0",
+    "antd": "^4.22.8",
+    "mongodb": "^4.9.1",
+    "next": "12.2.5",
     "normalize.css": "^8.0.1",
-    "query-string": "^7.1.1",
-    "react": "^16.14.0",
-    "react-copy-to-clipboard": "^5.0.4",
-    "react-dom": "^16.14.0",
-    "react-i18next": "^11.18.5",
-    "react-router-dom": "^6.3.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@craco/craco": "^5.9.0",
-    "@types/lodash": "^4.14.178",
-    "@types/mockjs": "^1.0.4",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.8.3",
-    "@types/react-dom": "^16.8.2",
-    "archiver": "^5.3.0",
-    "craco-alias": "^3.0.1",
-    "craco-less": "^2.0.0",
-    "less": "^4.1.2",
-    "less-loader": "^10.2.0",
-    "mockjs": "^1.1.0",
-    "postcss": "^8.4.5",
-    "react-scripts": "3.4.4",
-    "sass": "^1.45.1",
-    "sass-loader": "^12.4.0",
-    "typescript": "^4.1.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "rules": {
-      "no-useless-escape": "off",
-      "array-callback-return": "off",
-      "react-hooks/rules-of-hooks": "off",
-      "react-hooks/exhaustive-deps": "off"
-    }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "resolutions": {
-    "react-error-overlay": "6.0.9"
+    "@types/node": "18.7.14",
+    "@types/react": "18.0.18",
+    "@types/react-dom": "18.0.6",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5",
+    "sass": "^1.54.8",
+    "typescript": "4.8.2"
   }
 }
