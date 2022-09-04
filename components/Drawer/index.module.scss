@@ -1,10 +1,8 @@
 .drawer {
   .drawer__content {
     .drawer__thumb {
-      display: block;
-      width: 375px;
-      margin: 0 auto;
-      object-fit: contain;
+      display: flex;
+      justify-content: center;
     }
     .drawer__title {
       color: #000;
