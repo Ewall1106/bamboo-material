@@ -2,6 +2,7 @@ import React from 'react'
 import { observer } from 'mobx-react'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 import { Button, Space, Switch } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
 
@@ -19,7 +20,7 @@ const Header = observer(() => {
   return (
     <div className={styles.header}>
       <div className={styles.header__logo}>
-        <img
+        <Image
           className={styles.logo}
           alt="logo"
           src="https://s3.bmp.ovh/imgs/2022/08/31/c110cb95c5338ba1.png"

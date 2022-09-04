@@ -7,7 +7,7 @@ type Data = {
   list: any[]
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const { db } = await connectToDatabase()
   const { pageSize, pageNo, _id, name, ...others } = req.body
 
@@ -25,3 +25,5 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     list
   })
 }
+
+export default handleMaterial

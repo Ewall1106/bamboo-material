@@ -3,6 +3,7 @@ import { observer } from 'mobx-react'
 import ListInfoObserver from './mbox'
 import { DownloadOutlined } from '@ant-design/icons'
 import { Skeleton, Empty } from 'antd'
+import Image from 'next/image'
 import FrameIcon from '@/components/FrameIcon'
 
 import styles from './index.module.scss'
@@ -26,7 +27,7 @@ const List = observer(() => {
     if (loading) {
       return <SkeletonImage active={true} />
     } else if (url) {
-      return <img alt="thumb" src={url} />
+      return <Image alt="thumb" src={url} />
     } else {
       return <SkeletonImage active={false} />
     }
