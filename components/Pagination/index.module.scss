@@ -1,0 +1,13 @@
+.pagination {
+  width: 80%;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  .pagination__main {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
