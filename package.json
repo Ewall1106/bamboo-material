@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "antd": "^4.22.8",
+    "axios": "^0.27.2",
     "dayjs": "^1.11.5",
     "lodash": "^4.17.21",
     "lottie-web": "^5.9.6",

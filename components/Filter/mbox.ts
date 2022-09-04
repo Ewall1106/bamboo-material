@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-// import ListObserver from '../List/mbox'
+import ListObserver from '../List/mbox'
 
 class FormInfo {
   formInstance = null
@@ -31,13 +31,13 @@ class FormInfo {
   // === action === //
   handleReset = () => {
     this.formInstance.resetFields()
-    // ListObserver.requestList({ pageNo: 1 })
+    ListObserver.requestList({ pageNo: 1 })
   }
 
   handleFinsh = values => {
     console.log('===Finish===', values)
     this.setFormInfo(values)
-    // ListObserver.requestList({ ...values })
+    ListObserver.requestList({ ...values })
   }
 
   handleSortIndex = idx => {
