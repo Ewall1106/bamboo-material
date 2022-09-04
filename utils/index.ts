@@ -29,7 +29,8 @@ export const getTime = time => {
 }
 
 export const getLng = () => {
-  if (typeof window !== 'undefined') {
-    return window.localStorage.getItem('lng')
-  }
+  // if (typeof window !== 'undefined') {
+  //   return window.localStorage.getItem('lng')
+
+  return ''
 }
