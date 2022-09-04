@@ -1,21 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import lottie from 'lottie-web'
-import { nanoid } from 'nanoid'
 
 export const GiveStar = ({ path }) => {
-  const docId = nanoid()
+  const ref = useRef(null)
 
   useEffect(() => {
     lottie.loadAnimation({
-      container: document.getElementById(docId), // the dom element that will contain the animation
+      container: ref.current, // the dom element that will contain the animation
       renderer: 'svg',
       loop: true,
       autoplay: true,
       path
     })
-  }, [path, docId])
+  }, [path])
 
-  return <div id={docId} style={{ width: 50, height: 50 }}></div>
+  return <div ref={ref} style={{ width: 50, height: 50 }}></div>
 }
 
 export default GiveStar
