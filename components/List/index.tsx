@@ -27,7 +27,7 @@ const List = observer(() => {
     if (loading) {
       return <SkeletonImage active={true} />
     } else if (url) {
-      return <Image alt="thumb" src={url} />
+      return <Image alt="thumb" width={200} height={200} src={url} />
     } else {
       return <SkeletonImage active={false} />
     }

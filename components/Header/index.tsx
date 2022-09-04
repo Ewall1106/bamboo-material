@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Button, Space, Switch } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
+import logo from '@/public/logo.png'
 
 import styles from './index.module.scss'
 
@@ -21,7 +22,8 @@ const Header = observer(() => {
     <div className={styles.header}>
       <div className={styles.header__logo}>
         <Image
-          className={styles.logo}
+          width={50}
+          height={50}
           alt="logo"
           src="https://s3.bmp.ovh/imgs/2022/08/31/c110cb95c5338ba1.png"
         />
