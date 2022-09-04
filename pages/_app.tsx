@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { ConfigProvider } from 'antd'
 import { appWithTranslation } from 'next-i18next'
 
@@ -9,10 +10,15 @@ import '@/styles/antd.css'
 
 import type { AppProps } from 'next/app'
 
-const lng = true ? zhCN : enUS
-
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const router = useRouter()
+  const lng = router.locale === 'zh' ? zhCN : enUS
+
+  return (
+    <ConfigProvider locale={lng}>
+      <Component {...pageProps} />
+    </ConfigProvider>
+  )
 }
 
 export default appWithTranslation(MyApp)
