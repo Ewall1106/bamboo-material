@@ -3,7 +3,7 @@ import { connectToDatabase } from '@/lib/mongodb'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  count: number
+  total: number
   list: any[]
 }
 
@@ -21,7 +21,7 @@ export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<D
     .toArray()
 
   return res.status(200).json({
-    count: count.length,
+    total: count.length,
     list
   })
 }

@@ -6,6 +6,7 @@ import FilterObserver from '@/components/Filter/mbox'
 import Header from '@/components/Header'
 import Filter from '@/components/Filter'
 import Main from '@/components/Main'
+import Pagination from '@/components/Pagination'
 
 import type { NextPage } from 'next'
 
@@ -19,6 +20,7 @@ const Index: NextPage = () => {
       <Header />
       <Filter />
       <Main />
+      <Pagination />
     </>
   )
 }
