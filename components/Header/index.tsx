@@ -35,8 +35,8 @@ const Header = observer(() => {
             {t('document')}
           </Button>
           <Switch
-            checkedChildren="English"
-            unCheckedChildren="中文"
+            checkedChildren="中文"
+            unCheckedChildren="En"
             defaultChecked={router.locale === 'en'}
             onChange={handleLng}
           />
