@@ -21,7 +21,7 @@ class FormInfo {
   }
 
   setFormInfo = values => {
-    this.formInfo = values
+    this.formInfo = Object.assign(this.formInfo, values)
   }
 
   getFormInfo = () => {
@@ -31,13 +31,13 @@ class FormInfo {
   // === action === //
   handleReset = () => {
     this.formInstance.resetFields()
-    ListObserver.requestList({ pageNo: 1 })
+    ListObserver.requestList({ pageNo: 1, sortIndex: 0 })
   }
 
-  handleFinsh = values => {
-    console.log('===Finish===', values)
-    this.setFormInfo(values)
-    ListObserver.requestList({ ...values })
+  handleFinsh = ({ pageNo = 1, ...others }) => {
+    console.log('===Finish===', others)
+    this.setFormInfo(others)
+    ListObserver.requestList({ pageNo, ...this.formInfo })
   }
 
   handleSortIndex = idx => {
