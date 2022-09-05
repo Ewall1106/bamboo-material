@@ -32,7 +32,8 @@ class ListInfo {
         ...others
       })
       console.log('===list===', data)
-      if (data.list.length < this.pageSize) {
+
+      if (data.list.length && data.list.length < this.pageSize) {
         const len = this.pageSize - data.list.length
         const fake = new Array(len).fill({}).map(() => {
           return {
