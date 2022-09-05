@@ -4,5 +4,6 @@
   "description": "直接使用由 Bamboo 构建出来的一系列物料组件，帮助你在开发前端页面的时候更快速、效率更高。",
   "give-me-star": "给此项目点个star帮助其做的更好~",
   "use this component": "使用这个组件",
-  "have-fun": "希望你能玩的开心"
+  "have-fun": "希望你能玩的开心",
+  "search_name_or_description": "搜索名称/描述"
 }

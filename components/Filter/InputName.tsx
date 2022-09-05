@@ -8,7 +8,7 @@ const InputName = observer(() => {
 
   return (
     <Form.Item name="name" label={t('name')}>
-      <Input placeholder={t('search component')} allowClear />
+      <Input placeholder={t('search_name_or_description')} allowClear />
     </Form.Item>
   )
 })
