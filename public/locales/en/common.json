@@ -9,5 +9,6 @@
   "update": "Update",
   "create": "Create",
   "name": "Name",
-  "select": "select"
+  "select": "select",
+  "search_name_or_description": "search name/desc"
 }

@@ -8,7 +8,6 @@ import styles from './index.module.scss'
 
 const Desc = () => {
   const { t } = useTranslation('home')
-  const docId = Math.random()
 
   return (
     <div className={styles.desc}>
