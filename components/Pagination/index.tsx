@@ -1,6 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import ListInfoObserver from '../List/mbox'
+import FilterObserver from '../Filter/mbox'
 import { Pagination as AntPagination } from 'antd'
 
 import styles from './index.module.scss'
@@ -12,7 +13,7 @@ const Pagination = observer(() => {
   const pageSize = ListInfoObserver.getPageSize()
 
   const onChange = pagination => {
-    ListInfoObserver.requestList({ pageNo: pagination })
+    FilterObserver.handleFinsh({ pageNo: pagination })
   }
 
   return (

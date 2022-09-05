@@ -7,7 +7,6 @@ import { useTranslation } from 'next-i18next'
 import InputName from './InputName'
 import SelectItem from './Select'
 import ActionsItem from './Actions'
-// import SelectGroupItem from './SelectGroup'
 
 import styles from './index.module.scss'
 
@@ -50,7 +49,6 @@ export const Filter = observer(() => {
       </div>
 
       <SelectItem />
-      {/* <SelectGroupItem /> */}
       <InputName />
       <ActionsItem />
     </Form>
