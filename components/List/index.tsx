@@ -33,11 +33,11 @@ const List = observer(() => {
     }
   }
 
-  const DownloadCount = () => {
+  const DownloadCount = ({ count }) => {
     return (
       <div className={styles.count}>
         <DownloadOutlined />
-        <span style={{ paddingLeft: 2 }}>99+</span>
+        <span style={{ paddingLeft: 2 }}>{count}</span>
       </div>
     )
   }
@@ -60,7 +60,7 @@ const List = observer(() => {
               <div className={styles.list__card__desc}>
                 <FrameIcon type={item.type} />
                 <div className={styles.title}>{item.name}</div>
-                <DownloadCount />
+                <DownloadCount count={item?.download || 0} />
               </div>
             </div>
           )
