@@ -55,13 +55,13 @@ export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<D
       }
     })
   }
-  // if (sortIndex === 1) {
-  //   pipeline.push({
-  //     $sort: {
-  //       download: 1
-  //     }
-  //   })
-  // }
+  if (sortIndex === 1) {
+    pipeline.push({
+      $sort: {
+        download: -1
+      }
+    })
+  }
   // https://www.mongodb.com/docs/manual/reference/operator/aggregation/facet/
   // https://stackoverflow.com/questions/56462672/formatting-data-after-facet-aggregation-in-mongodb
   pipeline.push({

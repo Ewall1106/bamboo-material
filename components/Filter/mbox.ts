@@ -30,6 +30,7 @@ class FormInfo {
 
   // === action === //
   handleReset = () => {
+    this.formInfo.sortIndex = 0
     this.formInstance.resetFields()
     ListObserver.requestList({ pageNo: 1, sortIndex: 0 })
   }
@@ -42,6 +43,7 @@ class FormInfo {
 
   handleSortIndex = idx => {
     this.formInfo.sortIndex = idx
+    this.handleFinsh({})
   }
 }
 
