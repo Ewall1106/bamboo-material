@@ -56,7 +56,7 @@ export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<D
   if (sortIndex === 0) {
     pipeline.push({
       $sort: {
-        updatedAt: -1
+        createdAt: -1
       }
     })
   }
