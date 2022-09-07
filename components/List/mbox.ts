@@ -34,19 +34,9 @@ class ListInfo {
       })
       console.log('===list===', data)
 
-      if (data.list.length && data.list.length < this.pageSize) {
-        const len = this.pageSize - data.list.length
-        const fake = new Array(len).fill({}).map(() => {
-          return {
-            ...data.list[0],
-            _id: nanoid(),
-            placeholder: true // just to fixed 'flex layout' problem
-          }
-        })
-        data.list = [...data.list, ...fake]
-      }
+      const list = this.handleListFlexLayoutIssue(data.list)
 
-      const tableList = data.list.map(item => {
+      const tableList = list.map(item => {
         item.key = item._id
         return item
       })
@@ -124,6 +114,26 @@ class ListInfo {
 
   getCurrentItem = () => {
     return this.currentItem
+  }
+
+  // === utils === //
+  handleListFlexLayoutIssue = list => {
+    if (list.length && list.length < this.pageSize) {
+      const fake = {
+        ...list[0],
+        _id: nanoid(),
+        placeholder: true
+      }
+      if (!this.transform) {
+        if ([2, 5, 8, 11].includes(list.length)) list.push(fake)
+      } else {
+        if ([3, 7, 11].includes(list.length)) list.push(fake)
+        if ([2, 6, 10].includes(list.length)) {
+          list = [...list, fake, { ...fake, _id: nanoid() }]
+        }
+      }
+    }
+    return list
   }
 }
 

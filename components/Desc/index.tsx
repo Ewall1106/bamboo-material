@@ -1,18 +1,19 @@
 import React from 'react'
-import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
-import { nanoid } from 'nanoid'
+import { observer } from 'mobx-react'
 import LottieFile from '@/components/LottieFile'
+import ListInfoObserver from '../List/mbox'
 
 import styles from './index.module.scss'
 
-const Desc = () => {
+const Desc = observer(() => {
   const { t } = useTranslation('home')
+  const total = ListInfoObserver.getTotal()
 
   return (
     <div className={styles.desc}>
       <h1 className={styles.desc__title}>
-        <span style={{ color: '#15aabf', fontWeight: 'bold', marginRight: 4 }}>123</span>
+        <span style={{ color: '#15aabf', fontWeight: 'bold', marginRight: 4 }}>{total}</span>
         {t('components built with Bamboo')}
       </h1>
       <div className={styles.desc__text}>{t('description')}</div>
@@ -22,6 +23,6 @@ const Desc = () => {
       </div>
     </div>
   )
-}
+})
 
 export default Desc
