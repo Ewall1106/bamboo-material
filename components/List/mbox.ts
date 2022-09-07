@@ -27,6 +27,7 @@ class ListInfo {
 
     try {
       const { data } = await getPageMaterial({
+        iszh: location.pathname.includes('/zh'),
         pageNo,
         pageSize: this.pageSize,
         ...others

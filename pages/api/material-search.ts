@@ -9,7 +9,7 @@ type Data = {
 
 export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const { db } = await connectToDatabase()
-  const { name, sortIndex, type, pageSize, pageNo } = req.body
+  const { name, iszh, sortIndex, type, pageSize, pageNo } = req.body
 
   // https://www.mongodb.com/docs/atlas/atlas-search/text/
   // https://www.mongodb.com/docs/atlas/atlas-search/create-index/#std-label-ref-create-index
@@ -24,16 +24,16 @@ export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<D
           should: [
             {
               text: {
-                path: 'name',
-                query: name,
-                fuzzy: {}
+                path: iszh ? 'name_zh' : 'name',
+                query: name
+                // fuzzy: {}
               }
             },
             {
               text: {
-                path: 'desc',
-                query: name,
-                fuzzy: {}
+                path: iszh ? 'desc_zh' : 'desc',
+                query: name
+                // fuzzy: {}
               }
             }
           ]
