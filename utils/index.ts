@@ -24,6 +24,6 @@ export const getTagColor = s => {
   }
 }
 
-export const getTime = time => {
+export const formateDate = time => {
   return dayjs(time).format('YYYY-MM-DD')
 }
