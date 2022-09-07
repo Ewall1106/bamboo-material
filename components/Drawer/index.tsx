@@ -4,9 +4,11 @@ import { useTranslation } from 'react-i18next'
 import ListInfoObserver from '../List/mbox'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { formateDate } from '@/utils'
 
-import { Drawer as AntDrawer, Divider, Input, Button, Tooltip } from 'antd'
+import { Drawer as AntDrawer, Divider, Input, Button, Tooltip, message } from 'antd'
 import { CopyOutlined, DownloadOutlined } from '@ant-design/icons'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import LottieFile from '@/components/LottieFile'
 import FrameIcon from '@/components/FrameIcon'
@@ -76,20 +78,24 @@ const Drawer = observer(() => {
         <div className={styles.drawer__framework}>
           {t('framework')}: <FrameIcon type={info.type} />
         </div>
+        <DownloadCount count={info.download} />
         <div className={styles.drawer__create}>
-          {t('create')}: {info.createdAt}
+          {t('create')}: {formateDate(info.createdAt)}
         </div>
         <div className={styles.drawer__update}>
-          {t('update')}: {info.updatedAt}
+          {t('update')}: {formateDate(info.updatedAt)}
         </div>
 
-        <DownloadCount count={info.download} />
-
         <div className={styles.drawer__command}>
-          <Input style={{ flex: 1 }} defaultValue="$ bamboo create 123123jkjjhkjhk1231" />
-          <Tooltip title={t('use this component')}>
+          <Input style={{ flex: 1 }} defaultValue={`$ npm init bamboo create ${info._id}`} />
+          <CopyToClipboard
+            text={`npm init bamboo create ${info._id}`}
+            onCopy={() => {
+              message.success(t('copy_success'))
+            }}
+          >
             <Button icon={<CopyOutlined />} />
-          </Tooltip>
+          </CopyToClipboard>
         </div>
       </div>
     </AntDrawer>

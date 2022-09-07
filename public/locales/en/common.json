@@ -10,5 +10,6 @@
   "create": "Create",
   "name": "Name",
   "select": "select",
+  "copy_success": "copied successfully",
   "search_name_or_description": "search name/desc"
 }
