@@ -48,6 +48,11 @@ export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<D
       }
     })
   }
+  pipeline.push({
+    $match: {
+      isOpen: true
+    }
+  })
   if (sortIndex === 0) {
     pipeline.push({
       $sort: {
