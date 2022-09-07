@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
 import ListInfoObserver from './mbox'
+import { useRouter } from 'next/router'
 import { DownloadOutlined } from '@ant-design/icons'
 import { Skeleton, Empty } from 'antd'
 import Image from 'next/image'
@@ -14,6 +15,9 @@ const List = observer(() => {
   const isSkeleton = ListInfoObserver.getSkeleton()
   const isTransForm = ListInfoObserver.getTransForm()
   const setCurrentItem = ListInfoObserver.setCurrentItem
+
+  const router = useRouter()
+  const iszh = router.locale === 'zh'
 
   useEffect(() => {
     ListInfoObserver.setSkeleton(true)
@@ -59,7 +63,7 @@ const List = observer(() => {
               <p className={styles.list__card__divider}></p>
               <div className={styles.list__card__desc}>
                 <FrameIcon type={item.type} />
-                <div className={styles.title}>{item.name}</div>
+                <div className={styles.title}>{iszh ? item.name_zh : item.name}</div>
                 <DownloadCount count={item?.download || 0} />
               </div>
             </div>

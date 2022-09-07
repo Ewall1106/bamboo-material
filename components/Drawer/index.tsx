@@ -3,6 +3,7 @@ import { observer } from 'mobx-react'
 import { useTranslation } from 'react-i18next'
 import ListInfoObserver from '../List/mbox'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import { Drawer as AntDrawer, Divider, Input, Button, Tooltip } from 'antd'
 import { CopyOutlined, DownloadOutlined } from '@ant-design/icons'
@@ -32,17 +33,19 @@ const GiveStar = () => {
 
 const Drawer = observer(() => {
   const { t } = useTranslation()
+  const router = useRouter()
+  const iszh = router.locale === 'zh'
 
   const visible = ListInfoObserver.getDrawerShow()
   const setDrawerShow = ListInfoObserver.setDrawerShow
   const info: any = ListInfoObserver.getCurrentItem()
 
-  const DownloadCount = () => {
+  const DownloadCount = ({ count }) => {
     return (
       <div className={styles.drawer__download}>
         <span>{t('download')}: </span>
         <DownloadOutlined />
-        <span style={{ paddingLeft: 2 }}>99+</span>
+        <span style={{ paddingLeft: 2 }}>{count}</span>
       </div>
     )
   }
@@ -68,8 +71,8 @@ const Drawer = observer(() => {
           />
         </div>
         <Divider />
-        <div className={styles.drawer__title}>{info.name}</div>
-        <div className={styles.drawer__desc}>{info.desc}</div>
+        <div className={styles.drawer__title}>{iszh ? info.name_zh : info.name}</div>
+        <div className={styles.drawer__desc}>{iszh ? info.desc_zh : info.desc}</div>
         <div className={styles.drawer__framework}>
           {t('framework')}: <FrameIcon type={info.type} />
         </div>
@@ -80,7 +83,7 @@ const Drawer = observer(() => {
           {t('update')}: {info.updatedAt}
         </div>
 
-        <DownloadCount />
+        <DownloadCount count={info.download} />
 
         <div className={styles.drawer__command}>
           <Input style={{ flex: 1 }} defaultValue="$ bamboo create 123123jkjjhkjhk1231" />
