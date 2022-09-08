@@ -13,8 +13,8 @@ const SelectItem = observer(() => {
       <Select placeholder={t('select')} allowClear style={{ width: 120 }}>
         {pageTypeList.map(item => {
           return (
-            <Select.Option key={item} value={item}>
-              {item}
+            <Select.Option key={item.value} value={item.value} disabled={item.disabled}>
+              {item.value}
             </Select.Option>
           )
         })}
