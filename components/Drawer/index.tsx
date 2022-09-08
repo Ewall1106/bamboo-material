@@ -59,7 +59,7 @@ const Drawer = observer(() => {
       placement="right"
       onClose={() => setDrawerShow(false)}
       closable={false}
-      visible={visible}
+      open={visible}
       footer={<GiveStar />}
     >
       <div className={styles.drawer__content}>

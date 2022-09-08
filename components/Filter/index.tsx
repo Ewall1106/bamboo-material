@@ -3,6 +3,7 @@ import { Form } from 'antd'
 import { observer } from 'mobx-react'
 import FormInfoObserver from './mbox'
 import { useTranslation } from 'next-i18next'
+import _ from 'loadsh'
 
 import InputName from './InputName'
 import SelectItem from './Select'
@@ -31,11 +32,14 @@ export const Filter = observer(() => {
   const { sortIndex } = FormInfoObserver.getFormInfo()
 
   const handleIndex = idx => {
+    if (idx === sortIndex) return
     FormInfoObserver.handleSortIndex(idx)
   }
 
+  const handleFinsh = _.throttle(FormInfoObserver.handleFinsh, 500, { trailing: false })
+
   return (
-    <Form style={style} layout="inline" form={form} onFinish={FormInfoObserver.handleFinsh}>
+    <Form style={style} layout="inline" form={form} onFinish={handleFinsh}>
       <div className={styles.hotAndNew}>
         {[t('recent'), t('hot')].map((item, idx) => {
           const hightLight = sortIndex === idx ? '#15aabf' : '#000'
