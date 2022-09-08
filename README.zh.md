@@ -29,5 +29,4 @@
 ## 协议
 
 - [MIT](https://github.com/Ewall1106/bamboo-ui/blob/main/LICENSE)
-
 - Copyright (c) 2022-present Daniel Xiong
