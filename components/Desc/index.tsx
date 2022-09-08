@@ -16,8 +16,8 @@ const Desc = observer(() => {
     <div className={styles.desc}>
       <h1 className={styles.desc__title}>
         <span style={{ color: '#15aabf', fontWeight: 'bold', marginRight: 10 }}>
-          {countList.map(num => {
-            return <CountUp end={Number(num)} />
+          {countList.map((num, idx) => {
+            return <CountUp key={idx} end={Number(num)} />
           })}
         </span>
         {t('components built with Bamboo')}
