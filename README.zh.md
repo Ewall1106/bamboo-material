@@ -14,19 +14,19 @@
 
 [English](https://github.com/Ewall1106/bamboo-ui/blob/main/README.md) | [简体中文](https://github.com/Ewall1106/bamboo-ui/blob/main/README.zh.md)
 
-`Bamboo-UI` is a material consumption platform where you can find the materials you want and apply them locally with easy way.
+`Bamboo-UI` 是一个物料消费平台，你可以在上面找到你想要的物料，然后一键运用到本地。
 
-Support frameworks such as `react、vue、vue3` etc.
+支持主流框架 `react、vue、vue3` 等。
 
-More info: https://bamboo-docs.vercel.app
+相关文档: https://bamboo-docs.vercel.app
 
-## USAGE
+## 使用
 
-1. Open up material platform: [bamoo-ui](https://bamboo-material.vercel.app)
-2. Select your material and copy the command.
-3. Using it in local project.
+1. 打开物料平台: [bamoo-ui](https://bamboo-material.vercel.app)
+2. 选择你物料并复制命令
+3. 在本地某个工程中使用即可
 
-## LICENSE
+## 协议
 
 - [MIT](https://github.com/Ewall1106/bamboo-ui/blob/main/LICENSE)
 
