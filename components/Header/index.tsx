@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Button, Space, Switch } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
-import logo from '@/public/logo.png'
 
 import styles from './index.module.scss'
 
