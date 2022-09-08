@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
+import { useTranslation } from 'next-i18next'
 import ListInfoObserver from './mbox'
 import { useRouter } from 'next/router'
 import { DownloadOutlined } from '@ant-design/icons'
-import { Skeleton, Empty, Button } from 'antd'
+import { Skeleton, Empty } from 'antd'
 import Image from 'next/image'
 import FrameIcon from '@/components/FrameIcon'
 
@@ -19,6 +20,7 @@ const List = observer(() => {
 
   const router = useRouter()
   const iszh = router.locale === 'zh'
+  const { t } = useTranslation()
 
   useEffect(() => {
     ListInfoObserver.setSkeleton(true)
@@ -82,7 +84,7 @@ const List = observer(() => {
             image="https://s1.ax1x.com/2022/09/08/vbgu38.png"
             imageStyle={{ height: 60 }}
             style={{ margin: '20px auto' }}
-            description={<span style={{ color: '#8795a1' }}>网络错误，请刷新重试</span>}
+            description={<span style={{ color: '#8795a1' }}>{t('network-error')}</span>}
           />
         )}
       </div>

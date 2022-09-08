@@ -11,5 +11,6 @@
   "name": "Name",
   "select": "select",
   "copy_success": "copied successfully",
-  "search_name_or_description": "search name/desc"
+  "search_name_or_description": "search name/desc",
+  "network-error": "network error, please refresh again"
 }
