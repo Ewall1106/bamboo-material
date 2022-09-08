@@ -19,13 +19,15 @@ const Pagination = observer(() => {
   return (
     <div className={styles.pagination}>
       <div className={styles.pagination__main} style={{ width: isTransForm ? '100%' : '70%' }}>
-        <AntPagination
-          onChange={onChange}
-          current={current}
-          pageSize={pageSize}
-          total={total}
-          showSizeChanger={false}
-        />
+        {!!total && (
+          <AntPagination
+            onChange={onChange}
+            current={current}
+            pageSize={pageSize}
+            total={total}
+            showSizeChanger={false}
+          />
+        )}
       </div>
     </div>
   )

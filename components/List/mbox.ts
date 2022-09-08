@@ -12,6 +12,7 @@ class ListInfo {
   transform = false
   currentItem = {}
   drawerShow = false
+  isError = false
 
   constructor() {
     makeAutoObservable(this)
@@ -47,8 +48,17 @@ class ListInfo {
       this.setLoading(false)
       this.setSkeleton(false)
     } catch (error) {
-      console.log('error', error)
+      console.log('===error===', error)
+      this.setErrorStatus(true)
     }
+  }
+
+  setErrorStatus = flag => {
+    this.isError = flag
+  }
+
+  getErrorStatus = () => {
+    return this.isError
   }
 
   setList = list => {
