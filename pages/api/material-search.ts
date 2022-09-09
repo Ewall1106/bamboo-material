@@ -81,7 +81,9 @@ export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<D
         },
         {
           $project: {
-            __v: 0
+            __v: 0,
+            schema: 0,
+            projectSchema: 0
           }
         }
       ]
