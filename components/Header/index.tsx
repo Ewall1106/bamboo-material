@@ -17,9 +17,21 @@ const Header = observer(() => {
     router.push(router.route, {}, { locale: changeTo })
   }
 
+  const handleDocument = () => {
+    const link =
+      router.locale === 'en'
+        ? 'https://bamboo-docs.vercel.app'
+        : 'https://bamboo-docs.vercel.app/zh/'
+    window.open(link, '_blank')
+  }
+
+  const handleGit = () => {
+    window.open('https://github.com/Ewall1106/bamboo-ui', '_blank')
+  }
+
   return (
     <div className={styles.header}>
-      <div className={styles.header__logo}>
+      <div className={styles.header__logo} onClick={() => location.reload()}>
         <Image
           width={50}
           height={50}
@@ -30,7 +42,7 @@ const Header = observer(() => {
       </div>
       <div className={styles.header__info}>
         <Space>
-          <Button style={{ color: '#606f7b' }} shape="round" type="text">
+          <Button style={{ color: '#606f7b' }} shape="round" type="text" onClick={handleDocument}>
             {t('document')}
           </Button>
           <Switch
@@ -39,7 +51,12 @@ const Header = observer(() => {
             defaultChecked={router.locale === 'en'}
             onChange={handleLng}
           />
-          <Button shape="round" style={{ color: '#000' }} icon={<GithubOutlined />}></Button>
+          <Button
+            shape="round"
+            style={{ color: '#000' }}
+            icon={<GithubOutlined />}
+            onClick={handleGit}
+          ></Button>
         </Space>
       </div>
     </div>
