@@ -44,7 +44,7 @@ class ListInfo {
 
       this.setList(tableList)
       this.setPageNo(pageNo)
-      this.setTotal(data.total)
+      this.setTotal(data.total || 0)
       this.setLoading(false)
       this.setSkeleton(false)
     } catch (error) {
