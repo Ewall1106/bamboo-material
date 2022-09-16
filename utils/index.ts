@@ -9,11 +9,11 @@ export const pageTypeList = [
   },
   {
     value: 'vue',
-    disabled: 1
+    disabled: 0
   },
   {
     value: 'vue-next',
-    disabled: 1
+    disabled: 0
   }
 ]
 
