@@ -19,21 +19,27 @@ export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<D
   if (name) {
     pipeline.push({
       $search: {
-        index: 'default',
+        index: 'default', // need atlas search index
         compound: {
           should: [
             {
               text: {
                 path: iszh ? 'name_zh' : 'name',
                 query: name,
-                fuzzy: {}
+                fuzzy: {
+                  maxEdits: 1,
+                  prefixLength: 2
+                }
               }
             },
             {
               text: {
                 path: iszh ? 'desc_zh' : 'desc',
                 query: name,
-                fuzzy: {}
+                fuzzy: {
+                  maxEdits: 1,
+                  prefixLength: 2
+                }
               }
             }
           ]
