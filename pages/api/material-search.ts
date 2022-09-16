@@ -25,15 +25,15 @@ export const handleMaterial = async (req: NextApiRequest, res: NextApiResponse<D
             {
               text: {
                 path: iszh ? 'name_zh' : 'name',
-                query: name
-                // fuzzy: {}
+                query: name,
+                fuzzy: {}
               }
             },
             {
               text: {
                 path: iszh ? 'desc_zh' : 'desc',
-                query: name
-                // fuzzy: {}
+                query: name,
+                fuzzy: {}
               }
             }
           ]
