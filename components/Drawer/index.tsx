@@ -76,7 +76,7 @@ const Drawer = observer(() => {
         <div className={styles.drawer__title}>{iszh ? info.name_zh : info.name}</div>
         <div className={styles.drawer__desc}>{iszh ? info.desc_zh : info.desc}</div>
         <div className={styles.drawer__framework}>
-          {t('framework')}: <FrameIcon type={info.type} />
+          {t('framework')}: <FrameIcon type={info.type} /> ({info.type})
         </div>
         <DownloadCount count={info.download} />
         <div className={styles.drawer__create}>
