@@ -5,6 +5,7 @@ import ListInfoObserver from '../List/mbox'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { formateDate } from '@/utils'
+import { log } from 'next-axiom'
 
 import { Drawer as AntDrawer, Divider, Input, Button, Tooltip, message } from 'antd'
 import { CopyOutlined, DownloadOutlined } from '@ant-design/icons'
@@ -91,6 +92,7 @@ const Drawer = observer(() => {
           <CopyToClipboard
             text={`npm init bamboo create ${info._id}`}
             onCopy={() => {
+              log.info('command copy button click')
               message.success(t('copy_success'))
             }}
           >

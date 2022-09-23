@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 import { getPageMaterial } from '@/lib/api/material'
-import { nanoid } from 'nanoid'
+import { log } from 'next-axiom'
 
 class ListInfo {
   tableList = []
@@ -118,6 +118,7 @@ class ListInfo {
   }
 
   setCurrentItem = item => {
+    log.info('card click')
     this.setDrawerShow(true)
     this.currentItem = item
   }
@@ -131,7 +132,7 @@ class ListInfo {
     if (list.length && list.length < this.pageSize) {
       const fake = {
         ...list[0],
-        _id: nanoid(),
+        _id: Math.random(),
         placeholder: true
       }
       if (!this.transform) {
@@ -139,7 +140,7 @@ class ListInfo {
       } else {
         if ([3, 7, 11].includes(list.length)) list.push(fake)
         if ([2, 6, 10].includes(list.length)) {
-          list = [...list, fake, { ...fake, _id: nanoid() }]
+          list = [...list, fake, { ...fake, _id: Math.random() }]
         }
       }
     }
