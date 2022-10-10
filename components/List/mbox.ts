@@ -20,6 +20,7 @@ class ListInfo {
 
   requestList = async ({ pageNo = this.pageNo, ...others }) => {
     this.setLoading(true)
+    this.setErrorStatus(false)
     if (pageNo === 2 && !this.transform) {
       this.skeleton = true
       this.tableList = []
