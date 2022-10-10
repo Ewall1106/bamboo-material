@@ -15,11 +15,7 @@ const Desc = observer(() => {
   return (
     <div className={styles.desc}>
       <h1 className={styles.desc__title}>
-        <span style={{ color: '#15aabf', fontWeight: 'bold', marginRight: 10 }}>
-          {countList.map((num, idx) => {
-            return <CountUp key={idx} end={Number(num)} />
-          })}
-        </span>
+        <CountUp className={styles.desc__count} start={0} end={total} />
         {t('components built with Bamboo')}
       </h1>
       <div className={styles.desc__text}>{t('description')}</div>
