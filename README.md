@@ -1,4 +1,4 @@
-## BAMBOO-UI
+## BAMBOO-MATERIAL
 
 <p>
   <a>
