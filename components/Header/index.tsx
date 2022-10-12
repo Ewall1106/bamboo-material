@@ -26,7 +26,7 @@ const Header = observer(() => {
   }
 
   const handleGit = () => {
-    window.open('https://github.com/Ewall1106/bamboo-ui', '_blank')
+    window.open('https://github.com/Ewall1106/bamboo-material', '_blank')
   }
 
   return (
@@ -38,7 +38,7 @@ const Header = observer(() => {
           alt="logo"
           src="https://s3.bmp.ovh/imgs/2022/08/31/c110cb95c5338ba1.png"
         />
-        <h3 className={styles.title}>Bamboo-UI</h3>
+        <h3 className={styles.title}>Bamboo-Material</h3>
       </div>
       <div className={styles.header__info}>
         <Space>

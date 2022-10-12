@@ -12,9 +12,9 @@
   </a>
 </p>
 
-[English](https://github.com/Ewall1106/bamboo-ui/blob/main/README.md) | [简体中文](https://github.com/Ewall1106/bamboo-ui/blob/main/README.zh.md)
+[English](https://github.com/Ewall1106/bamboo-material/blob/main/README.md) | [简体中文](https://github.com/Ewall1106/bamboo-material/blob/main/README.zh.md)
 
-`Bamboo-UI` is a material consumption platform where you can find the materials you want and apply them locally with easy way.
+`Bamboo-Material` is a material consumption platform where you can find the materials you want and apply them locally with easy way.
 
 Support frameworks such as `react、vue、vue3` etc.
 
@@ -28,5 +28,5 @@ More info: https://bamboo-docs.vercel.app
 
 ## LICENSE
 
-- [MIT](https://github.com/Ewall1106/bamboo-ui/blob/main/LICENSE)
+- [MIT](https://github.com/Ewall1106/bamboo-material/blob/main/LICENSE)
 - Copyright (c) 2022-present Daniel Xiong

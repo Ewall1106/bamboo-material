@@ -23,7 +23,7 @@ const GiveStar = () => {
   const { t } = useTranslation('home')
 
   const handleStart = () => {
-    window.open('https://github.com/Ewall1106/bamboo-ui')
+    window.open('https://github.com/Ewall1106/bamboo-material')
   }
 
   return (

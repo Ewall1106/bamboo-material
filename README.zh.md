@@ -12,9 +12,9 @@
   </a>
 </p>
 
-[English](https://github.com/Ewall1106/bamboo-ui/blob/main/README.md) | [简体中文](https://github.com/Ewall1106/bamboo-ui/blob/main/README.zh.md)
+[English](https://github.com/Ewall1106/bamboo-material/blob/main/README.md) | [简体中文](https://github.com/Ewall1106/bamboo-material/blob/main/README.zh.md)
 
-`Bamboo-UI` 是一个物料消费平台，你可以在上面找到你想要的物料，然后一键运用到本地。
+`Bamboo-Material` 是一个物料消费平台，你可以在上面找到你想要的物料，然后一键运用到本地。
 
 支持主流框架 `react、vue、vue3` 等。
 
@@ -28,5 +28,5 @@
 
 ## 协议
 
-- [MIT](https://github.com/Ewall1106/bamboo-ui/blob/main/LICENSE)
+- [MIT](https://github.com/Ewall1106/bamboo-material/blob/main/LICENSE)
 - Copyright (c) 2022-present Daniel Xiong
